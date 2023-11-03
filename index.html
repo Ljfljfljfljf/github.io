@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <div>
+        <form method="POST"  action="/jieshou">     <!--提交内容必须有名字name-->
+            用户名:<input type="text" name="用户名"><br>
+            密码:<input type="password" name="密码"><br>
+            选择性别:<input type="radio" name='性别' value="0">男<input type="radio" name='性别' value="1">女     <!--value是选择一个提交数据什么数据-->
+            <div>
+                选择爱好:
+                <input type="checkbox" name="爱好" value="1">篮球
+                <input type="checkbox" name="爱好" value="2">足球
+                <input type="checkbox" name="爱好" value="3">排球
+                <input type="checkbox" name="爱好" value="4">兵乓球
+            </div>
+            <div>
+                选择城市:
+                <select name="城市">
+                    <option value="0">北京</option>
+                    <option value="1">上海</option>
+                    <option value="2">深圳</option>
+                    <option value="3">其他</option>
+                </select>
+            </div>
+            <div>
+                备注:<textarea rows="5" name="备注" onclick="fun()">你可以在这里填写一些额外信息:</textarea>
+            </div>
+            <div>
+                <input type="button" value="提交">    <!--这个只是外观，没有提交功能-->
+                <input type="submit" value="提交">    <!--submit才能提交表单-->
+            </div>
+        </form>
+    </div>
+    <script src="static/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        function fun(){
+            if($('textarea').text()=='你可以在这里填写一些额外信息:'){
+                $('textarea').text('')
+            }
+        }
+    </script>
+</body>
+</html>
